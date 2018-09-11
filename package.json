@@ -1,0 +1,81 @@
+{
+  "name": "net-worth",
+  "version": "1.0.0",
+  "author": "Andreas Huber Dönni",
+  "license": "GPL-3.0-or-later",
+  "description": "If you primarily store your wealth in 'unconventional' assets like precious metals and crypto currencies, it seems difficult to get an overview of your current financial situation. Net Worth aims to make this a little easier. In a nutshell, the application presents your precious metal and crypto currency holdings in a groupable and sortable table, which allows you to quickly see how your net worth is spread among the different asset types and locations.",
+  "private": true,
+  "homepage": "https://github.com/andreashuber69/net-worth/tree/master/README.md",
+  "repository": "https://github.com/andreashuber69/net-worth/tree/master/store/electron",
+  "keywords": [
+    "previous-metals",
+    "cryptocurrencies"
+  ],
+  "main": "./src/main.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "dist": "build"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "electron": "2.0.7",
+    "electron-builder": "^20.28.4",
+    "electron-forge": "^5.2.2",
+    "electron-prebuilt-compile": "2.0.7",
+    "eslint": "^5.5.0"
+  },
+  "dependencies": {
+    "electron-compile": "^6.4.3",
+    "electron-squirrel-startup": "^1.0.0"
+  },
+  "build": {
+    "appId": "net-worth",
+    "linux": {
+      "target": [
+        "snap"
+      ]
+    }
+  },
+  "config": {
+    "forge": {
+      "make_targets": {
+        "win32": [
+          "squirrel"
+        ],
+        "darwin": [
+          "zip"
+        ],
+        "linux": [
+          "deb",
+          "rpm"
+        ]
+      },
+      "electronPackagerConfig": {
+        "packageManager": "npm"
+      },
+      "electronWinstallerConfig": {
+        "name": "net_worth_desktop"
+      },
+      "electronInstallerDebian": {
+        "icon": {
+          "scalable": "./icon.svg"
+        },
+        "description": "Provides an overview of your precious metal and crypto assets.",
+        "maintainer": "Andreas Huber Dönni"
+      },
+      "electronInstallerRedhat": {},
+      "github_repository": {
+        "owner": "andreashuber69",
+        "name": "net-worth"
+      },
+      "windowsStoreConfig": {
+        "packageName": "",
+        "name": "networthdesktop"
+      }
+    }
+  }
+}
