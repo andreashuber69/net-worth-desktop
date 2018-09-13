@@ -33,7 +33,11 @@
     {
       "type": "npm",
       "script": "dist",
-      "problemMatcher": []
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
     }
   ]
 }
