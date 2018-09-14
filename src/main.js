@@ -67,7 +67,7 @@ function addNewWindow(window, url) {
 function createFirstWindow() {
     const firstWindowOptions = {
         backgroundColor: "#25272A",
-        icon: path.join(__dirname, "../../../public/icon-192x192.png"),
+        icon: path.join(__dirname, "./icon-192x192.png"),
         webPreferences: { nodeIntegration: false }
     };
 
