@@ -22,16 +22,6 @@
     },
     {
       "type": "npm",
-      "script": "package",
-      "problemMatcher": []
-    },
-    {
-      "type": "npm",
-      "script": "make",
-      "problemMatcher": []
-    },
-    {
-      "type": "npm",
       "script": "dist",
       "problemMatcher": [],
       "group": {
