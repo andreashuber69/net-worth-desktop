@@ -34,7 +34,7 @@ the different asset types and locations.
 
 ### Installation
 
-Net Worth, is available through [Snapcraft Store](https://snapcraft.io/net-worth) and others.
+Net Worth is available through [Snapcraft Store](https://snapcraft.io/net-worth) and others.
 
 Alternatively, you can also
 [use the browser-based variant of Net Worth](https://github.com/andreashuber69/net-worth/blob/master/README.md#installation).
@@ -57,10 +57,10 @@ and deleted with the triple-dot menu at the end of each row. Some columns can be
 
 - **Data Storage**: The data you enter into Net Worth is only ever stored locally and can be saved to a file on your
   hard drive.
-- **Queries**: The application queries precious metal prices and currency exchange rates (https://quandl.com) plus
-  crypto currency prices (https://coinmarketcap.com). For crypto currencies, you have the option to also track your
-  balance. If you choose to do so, the application will also send your public address to an online service like e.g.
-  [blockchain.info](https://blockchain.info).
+- **Queries**: The application queries precious metal prices and currency exchange rates
+  ([quandl.com](https://quandl.com)) plus crypto currency prices ([coinmarketcap.com](https://coinmarketcap.com)). For
+  crypto currencies, you have the option to also track your balance. If you choose to do so, the application will also
+  send your public address to an online service like e.g. [blockchain.info](https://blockchain.info).
 - **Encryption**: All queries are always encrypted (https), but of course the owners of the respective services will
   have access to the contents of the queries (which can be attributed to you via your IP address). If you have concerns
   about that, you should use a reputable VPN provider or even TOR.
