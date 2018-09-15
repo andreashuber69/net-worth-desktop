@@ -1,21 +1,24 @@
 {
   "name": "net-worth",
-  "version": "1.0.2",
-  "description": "If you primarily store your wealth in 'unconventional' assets like precious metals and crypto currencies, it seems difficult to get an overview of your current financial situation. Net Worth aims to make this a little easier. In a nutshell, the application presents your precious metal and crypto currency holdings in a groupable and sortable table, which allows you to quickly see how your net worth is spread among the different asset types and locations.",
+  "author": {
+    "name": "Andreas Huber Dönni"
+  },
   "keywords": [
     "previous-metals",
     "cryptocurrencies"
   ],
-  "author": {
-    "name": "Andreas Huber Dönni"
-  },
+  "description": "If you primarily store your wealth in 'unconventional' assets like precious metals and crypto currencies, it seems difficult to get an overview of your current financial situation. Net Worth aims to make this a little easier. In a nutshell, the application presents your precious metal and crypto currency holdings in a groupable and sortable table, which allows you to quickly see how your net worth is spread among the different asset types and locations.",
+  "homepage": "https://github.com/andreashuber69/net-worth-desktop/blob/master/README.md",
+  "version": "1.0.2",
   "license": "GPL-3.0-or-later",
-  "private": true,
-  "homepage": "https://github.com/andreashuber69/net-worth/tree/master/README.md",
   "repository": {
     "type": "git",
     "url": "https://github.com/andreashuber69/net-worth-desktop"
   },
+  "bugs": {
+    "url": "https://github.com/andreashuber69/net-worth-desktop/issues"
+  },
+  "private": true,
   "main": "./src/main.js",
   "scripts": {
     "start": "electron .",
