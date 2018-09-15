@@ -35,6 +35,7 @@
     "appId": "net-worth",
     "productName": "Net Worth",
     "linux": {
+      "category": "Utility",
       "target": [
         "snap"
       ]

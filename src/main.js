@@ -1,6 +1,5 @@
 'use strict'
 const { app, BrowserWindow } = require('electron')
-const path = require('path')
 
 const appUrl = 'https://andreashuber69.github.io/net-worth/'
 const defaultOptions = { width: 1024, height: 768, show: false }
@@ -67,7 +66,6 @@ function addNewWindow (window, url) {
 function createFirstWindow () {
   const firstWindowOptions = {
     backgroundColor: '#25272A',
-    icon: path.join(__dirname, './icon-192x192.png'),
     webPreferences: { nodeIntegration: false }
   }
 
