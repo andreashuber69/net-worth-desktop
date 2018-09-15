@@ -1,13 +1,13 @@
 {
   "name": "net-worth",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "If you primarily store your wealth in 'unconventional' assets like precious metals and crypto currencies, it seems difficult to get an overview of your current financial situation. Net Worth aims to make this a little easier. In a nutshell, the application presents your precious metal and crypto currency holdings in a groupable and sortable table, which allows you to quickly see how your net worth is spread among the different asset types and locations.",
   "keywords": [
     "previous-metals",
     "cryptocurrencies"
   ],
   "author": {
-    "name": "Andreas Huber Dönni"    
+    "name": "Andreas Huber Dönni"
   },
   "license": "GPL-3.0-or-later",
   "private": true,
