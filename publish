@@ -1,0 +1,23 @@
+#!/bin/bash
+set -o errexit
+set -o nounset
+set -o pipefail
+
+pushd $(cd `dirname "${BASH_SOURCE[0]}"` && pwd)
+
+echo "Tagging sources..."
+VERSION=`npm version patch -m "Publish v%s"`
+git push
+git push --tags
+rm -rf dist
+
+echo "Building..."
+npm run dist
+
+echo "Publishing..."
+FILE=`find ./dist -name "net-worth_*.snap"`
+snapcraft push $FILE
+REVISION=`snapcraft list-revisions net-worth | grep ${VERSION#"v"}`
+snapcraft release net-worth ${REVISION:0:1} candidate
+
+popd
