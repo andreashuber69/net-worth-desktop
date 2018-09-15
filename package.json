@@ -19,7 +19,8 @@
   "main": "./src/main.js",
   "scripts": {
     "start": "electron .",
-    "dist": "build"
+    "dist": "build",
+    "test": "npm run dist"
   },
   "devDependencies": {
     "electron": "^2.0.9",
