@@ -42,12 +42,23 @@
       "synopsis": "Provides an overview of your precious metal and crypto assets.",
       "category": "Utility",
       "target": [
-        "snap"
+        {
+          "target": "snap",
+          "arch": [
+            "x64"
+          ]
+        }
       ]
     },
     "win": {
       "target": [
-        "appx"
+        {
+          "target": "appx",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        }
       ]
     },
     "appx": {
