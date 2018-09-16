@@ -49,6 +49,14 @@
       "target": [
         "appx"
       ]
+    },
+    "appx": {
+      "applicationId": "net.worth",
+      "backgroundColor": "#25272A",
+      "displayName": "net-worth",
+      "identityName": "52246AndreasHuber.net-worth",
+      "publisher": "CN=503CFDDF-2785-4846-8B0C-65C3FBFAEDAD",
+      "publisherDisplayName": "Andreas Huber"
     }
   }
 }
