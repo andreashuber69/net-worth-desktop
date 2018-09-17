@@ -65,7 +65,6 @@ function addNewWindow (window, url) {
 
 function createFirstWindow () {
   const firstWindowOptions = {
-    backgroundColor: '#25272A',
     webPreferences: { nodeIntegration: false }
   }
 
