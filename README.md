@@ -32,7 +32,7 @@ among the different asset types and locations.
 
 ### Installation
 
-Net Worth is available through [Snapcraft Store](https://snapcraft.io/net-worth) and others.
+Net Worth is available through [Snapcraft Store](https://snapcraft.io/net-worth) and [Microsoft Store](https://www.microsoft.com/en-us/p/net-worth/9nthd1z5n1d4).
 
 Alternatively, you can also
 [use the browser-based variant of Net Worth](https://github.com/andreashuber69/net-worth/blob/master/README.md#installation).
