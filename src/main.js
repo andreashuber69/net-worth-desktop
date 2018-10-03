@@ -2,7 +2,7 @@
 const { app, BrowserWindow } = require('electron')
 
 const appUrl = 'https://andreashuber69.github.io/net-worth/'
-const defaultOptions = { width: 1024, height: 768, show: false }
+const defaultOptions = { width: 1024, height: 768, show: false, title: 'Net Worth' }
 const windows = []
 
 function addDefaults (options) {
