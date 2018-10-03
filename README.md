@@ -54,6 +54,12 @@ In the table, clicking on a row representing an asset group will expand/collapse
 above, the **Silver** group is expanded, such that the grouped assets become visible. Individual assets can be edited
 and deleted with the triple-dot menu at the end of each row. Some columns can be sorted by clicking on their headers.
 
+Some table cells reveal more information when hovering over them with the mouse pointer:
+
+- Location for a cryptocurrency: Address (if specified)
+- Description: Notes (if specified)
+- Unit Value and Quantity, when displaying "Error": Additional error information
+
 ### Privacy
 
 - **Data Storage**: The data you enter into Net Worth is only ever stored locally and can be saved to a file on your
@@ -84,7 +90,7 @@ and deleted with the triple-dot menu at the end of each row. Some columns can be
 To see the known issues, ask questions, report problems or suggest improvements, please use the following issue
 trackers:
 
-- Download, Installation & Deinstallation:
+- Download, Installation & Uninstallation:
   [Net Worth Desktop Issue Tracker](https://github.com/andreashuber69/net-worth-desktop/issues)
 - Anything else: [Net Worth Issue Tracker](https://github.com/andreashuber69/net-worth/issues)
 
