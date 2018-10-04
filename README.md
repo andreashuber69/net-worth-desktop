@@ -47,8 +47,8 @@ address bar.
 ![Screenshot](doc/screenshot.png)
 
 In the toolbar on the left there's a menu with the usual suspects **New**, **Open...**, **Save**, **Save As...** and
-**About**. On the right, you'll find a button to add a new asset and controls to change the asset grouping and the
-valuation currency.
+**About**. On the right, you'll find buttons to add a new asset and refresh as well as controls to change the asset
+grouping and the valuation currency.
 
 In the table, clicking on a row representing an asset group will expand/collapse it. For example, in the screenshot
 above, the **Silver** group is expanded, such that the grouped assets become visible. Individual assets can be edited
@@ -62,8 +62,8 @@ Some table cells reveal more information when hovering over them with the mouse 
 
 ### Privacy
 
-- **Data Storage**: The data you enter into Net Worth is only ever stored locally and can be saved to a file on your
-  hard drive.
+- **Data Storage**: The data you enter into Net Worth is only ever stored locally and can, at your request, be saved to
+  a file on your hard drive.
 - **Queries**: The application queries precious metal prices and currency exchange rates
   ([quandl.com](https://quandl.com)) plus crypto currency prices ([coinmarketcap.com](https://coinmarketcap.com)). For
   crypto currencies, you have the option to also track your balance. If you choose to do so, the application will also
