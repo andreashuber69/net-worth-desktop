@@ -1,8 +1,9 @@
 'use strict'
 const { app, BrowserWindow } = require('electron')
+const windowStateKeeper = require('electron-window-state')
 
 const appUrl = 'https://andreashuber69.github.io/net-worth/'
-const defaultOptions = { width: 1024, height: 768, show: false, title: 'Net Worth' }
+const defaultOptions = { show: false, title: 'Net Worth' }
 const windows = []
 
 function onWindowOpen (ev, url, frameName, disposition, options) {
@@ -45,7 +46,18 @@ function onNavigated (window, url) {
 }
 
 function addNewWindow (options, url) {
-  const window = new BrowserWindow({ ...options, ...defaultOptions })
+  const windowState = windowStateKeeper({
+    defaultWidth: 1024,
+    defaultheight: 768
+  })
+
+  const window = new BrowserWindow({ ...options, ...windowState, ...defaultOptions })
+
+  if (windows.length === 0) {
+    // Apparently, manage also calls window.show(), which is why we bind it to the event.
+    window.once('ready-to-show', () => windowState.manage(window))
+  }
+
   windows.push(window)
   window.setMenu(null)
   onNavigated(window, url)

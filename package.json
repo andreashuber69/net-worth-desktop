@@ -25,6 +25,9 @@
     "dist": "build",
     "test": "npm run dist"
   },
+  "dependencies": {
+    "electron-window-state": "^5.0.1"
+  },
   "devDependencies": {
     "electron": "^3.0.2",
     "electron-builder": "^20.28.4",
