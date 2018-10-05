@@ -11,7 +11,7 @@ function onWindowOpen (ev, url, frameName, disposition, options) {
   //   the new window.
   // - Overwrite some properties of options with the ones of defaultOptions.
   ev.preventDefault()
-  const window = addNewWindow(new BrowserWindow({ ...options, ...defaultOptions }), url)
+  const window = addNewWindow(options, url)
 
   if (disposition !== 'new-window') {
     ev.newGuest = window
@@ -44,7 +44,8 @@ function onNavigated (window, url) {
   }
 }
 
-function addNewWindow (window, url) {
+function addNewWindow (options, url) {
+  const window = new BrowserWindow({ ...options, ...defaultOptions })
   windows.push(window)
   window.setMenu(null)
   onNavigated(window, url)
@@ -57,7 +58,7 @@ function addNewWindow (window, url) {
 }
 
 function createFirstWindow () {
-  addNewWindow(new BrowserWindow({ webPreferences: { nodeIntegration: false }, ...defaultOptions }), appUrl)
+  addNewWindow({ webPreferences: { nodeIntegration: false } }, appUrl)
 }
 
 app.on('window-all-closed', function () {
