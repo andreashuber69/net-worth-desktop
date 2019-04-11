@@ -44,7 +44,7 @@ Alternatively, you can also use
 
 ### [Privacy](https://github.com/andreashuber69/net-worth/blob/master/README.md#privacy)
 
-### [Features](https://github.com/andreashuber69/net-worth/blob/master/README.md#features)
+## [Features](https://github.com/andreashuber69/net-worth/blob/master/README.md#features)
 
 ## Known Issues / Feedback
 
@@ -55,4 +55,4 @@ trackers:
   [Net Worth Desktop Issue Tracker](https://github.com/andreashuber69/net-worth-desktop/issues)
 - Anything else: [Net Worth Issue Tracker](https://github.com/andreashuber69/net-worth/issues)
 
-### [Source Code](https://github.com/andreashuber69/net-worth/blob/master/README.md#source-code)
+## [Source Code](https://github.com/andreashuber69/net-worth/blob/master/README.md#source-code)
