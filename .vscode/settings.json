@@ -27,4 +27,5 @@
     "uninstallation",
   ],
   "git.confirmSync": false,
+  "files.autoSave": "onFocusChange",
 }
