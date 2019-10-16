@@ -8,3 +8,8 @@ before_install:
 branches:
   only:
   - /^v\d+\.\d+\.\d+$/
+
+notifications:
+  email:
+    recipients:
+      - secure: "ub1ZZ6HVzi1QE4t6vaIQulBnyxLXo276YA+TG20kVA9pwJ3rQ9cEwYtK9bXJ00yyRq5bWHzp+f35o5/NE0yUsBYay2mdP8a8cgL2S3g06dp9PafJ/siRLO1rxzjmjdBx5lHQHrSU6nJY/gbNjNPv2pnkDKI4j2WxSZdIACUKGcrUHINZxGimnmntZlA8wwCfO7cXUZvCjSEk0P5wkC/xdazkJSMvdq3Oei8IvFS9RNZt/+LWnx9YVHidfT0qSjV2rK4lHnBxOh40yYVyUHqRjY91L3wRsv744a3bQh5O+UwRCfktr+uI1fss4ri3oGmU0QGU//PmgAF+dwV58YHBXWRFHAKjSOdzRx2XIBFplzuNAJPFMrxdE/QmI4+5Gar5PjS34PBA6nVPKPiRuQm4PjwhEunQkOkxrJ/cZkAjycAPfsIhpmmkozE25nom7rLYdTbQElrcPiTrXPeeJfCHz2TekOVXKDViGKu4gXT6iTn45OGjNCDkAOXrIpIHbj+w7f7pgM9NwoW/QHEHs5gboW6jKUO+7eDIJ9PKKF9QJjjB4iuxl6LS23cjQ0Sm16cI6eOx9o1OQ0dpvtp8U5yLnFCQc4QsEccku6OBbYARlS90d3R3gScloQOUe6erwEtCKXYk8r8EY45MaaCLh0JyYrUMq/sTkUZg1ki0apaVl0Q="
