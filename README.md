@@ -34,10 +34,8 @@ among the different asset types and locations.
 
 ### Installation
 
-Net Worth is available through [Snapcraft Store](https://snapcraft.io/net-worth).
-
-Alternatively, you can also use
-[the browser-based variant of Net Worth](https://github.com/andreashuber69/net-worth/blob/master/README.md#installation).
+Net Worth is available through [Snapcraft Store](https://snapcraft.io/net-worth). Alternatively, you can also use
+[the browser-based variant of Net Worth](https://github.com/andreashuber69/net-worth/blob/master/README.md#getting-started).
 
 ### [Usage](https://github.com/andreashuber69/net-worth/blob/master/README.md#usage)
 
