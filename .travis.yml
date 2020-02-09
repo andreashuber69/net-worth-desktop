@@ -4,7 +4,20 @@ nodejs:
 
 branches:
   only:
+  - develop
+  - /^release\/.*/
   - master
+
+script:
+- npm run ci
+
+deploy:
+  channel: edge
+  provider: snap
+  skip-cleanup: true
+  snap: ./dist/net-worth_*.snap
+  on:
+    branch: develop
 
 notifications:
   email:

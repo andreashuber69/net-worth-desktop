@@ -23,7 +23,7 @@
   "scripts": {
     "start": "electron .",
     "dist": "build",
-    "test": "npm run dist"
+    "ci": "npm run dist"
   },
   "dependencies": {
     "electron-window-state": "^5.0.1"
