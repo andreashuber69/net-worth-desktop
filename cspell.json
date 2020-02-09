@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "language": "en",
+  "words": [
+    "Andreas",
+    "cryptocurrencies",
+    "cryptocurrency",
+    "Dönni",
+    "groupable",
+    "snapcraft",
+    "uninstallation"
+  ],
+  "flagWords": [],
+  "dictionaries": [],
+  "ignorePaths": [
+    "dist/**",
+    "node_modules/**",
+    "package.json",
+    "package-lock.json"
+  ]
+}
