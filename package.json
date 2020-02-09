@@ -9,7 +9,7 @@
   ],
   "description": "Gain a quick overview of your precious metal and crypto assets! If you primarily store your wealth in 'unconventional' assets like precious metals and cryptocurrencies, it seems difficult to get an overview of your current financial situation. Net Worth aims to make this a little easier. In a nutshell, the application presents your precious metal and cryptocurrency holdings in a groupable and sortable table, which allows you to quickly see how your net worth is spread among the different asset types and locations.",
   "homepage": "https://github.com/andreashuber69/net-worth-desktop/blob/master/README.md",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "license": "GPL-3.0-or-later",
   "repository": {
     "type": "git",
