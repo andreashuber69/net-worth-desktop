@@ -48,7 +48,7 @@ function onNavigated (window, url) {
 function addNewWindow (options, url) {
   const windowState = windowStateKeeper({
     defaultWidth: 1024,
-    defaultheight: 768
+    defaultHeight: 768
   })
 
   const window = new BrowserWindow({ ...options, ...windowState, ...defaultOptions })
