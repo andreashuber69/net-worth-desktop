@@ -1,6 +1,13 @@
+dist: xenial
 language: node_js
 nodejs:
 - 10
+
+addons:
+  snaps:
+   - name: snapcraft
+     channel: stable
+     confinement: classic
 
 branches:
   only:
