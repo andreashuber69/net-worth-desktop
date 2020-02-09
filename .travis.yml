@@ -1,13 +1,12 @@
-dist: xenial
 language: node_js
 nodejs:
 - 10
 
 addons:
   snaps:
-   - name: snapcraft
-     channel: stable
-     confinement: classic
+  - name: snapcraft
+    channel: stable
+    confinement: classic
 
 branches:
   only:
@@ -19,12 +18,12 @@ script:
 - npm run ci
 
 deploy:
-  channel: edge
+  channel: candidate
   provider: snap
   skip-cleanup: true
   snap: ./dist/net-worth_*.snap
   on:
-    branch: develop
+    branch: master
 
 notifications:
   email:
