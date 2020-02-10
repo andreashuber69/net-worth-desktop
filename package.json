@@ -21,11 +21,11 @@
   "private": true,
   "main": "./src/main.js",
   "scripts": {
-    "start": "electron .",
+    "start": "tsc && electron .",
     "prelint": "cspell '**/*.*' && markdownlint *.md",
     "lint": "eslint ./src",
     "prebuild": "npm run lint",
-    "build": "electron-builder",
+    "build": "tsc && electron-builder",
     "ci": "npm run build"
   },
   "dependencies": {
@@ -41,7 +41,8 @@
     "eslint-plugin-node": "^11.0.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
-    "markdownlint-cli": "^0.22.0"
+    "markdownlint-cli": "^0.22.0",
+    "typescript": "^3.7.5"
   },
   "build": {
     "appId": "net-worth",
