@@ -2,7 +2,6 @@
 const { app, BrowserWindow } = require('electron')
 const windowStateKeeper = require('electron-window-state')
 
-const appUrl = 'https://andreashuber69.github.io/net-worth/'
 const defaultOptions = { title: 'Net Worth', backgroundColor: '#25272A' }
 const windows = []
 
@@ -12,7 +11,7 @@ function onWindowOpen (ev, url, frameName, disposition, options) {
   //   the new window.
   // - Overwrite some properties of options with the ones of defaultOptions.
   ev.preventDefault()
-  const window = addNewWindow(options, url)
+  const window = addNewWindow(url, options)
 
   if (disposition !== 'new-window') {
     ev.newGuest = window
@@ -29,7 +28,7 @@ function removeClosedWindow (window) {
   windows.splice(index, 1)
 }
 
-function addNewWindow (options, url) {
+function addNewWindow (url, options) {
   const windowState = windowStateKeeper({
     defaultWidth: 1024,
     defaultHeight: 768
@@ -53,7 +52,7 @@ function addNewWindow (options, url) {
 }
 
 function createFirstWindow () {
-  addNewWindow({ webPreferences: { nodeIntegration: false } }, appUrl)
+  addNewWindow('https://andreashuber69.github.io/net-worth/', { webPreferences: { nodeIntegration: false } })
 }
 
 app.on('window-all-closed', function () {
