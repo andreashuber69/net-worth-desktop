@@ -2,19 +2,17 @@
 const { app, BrowserWindow } = require('electron')
 const windowStateKeeper = require('electron-window-state')
 
-const appUrl = 'https://andreashuber69.github.io/net-worth/'
-const defaultOptions = { show: false, title: 'Net Worth' }
 const windows = []
 
 function onWindowOpen (ev, url, frameName, disposition, options) {
-  // The code below mirrors electrons default behavior, with the following differences:
-  // - New windows are not registered as guests so that closing the original window does not also automatically close
-  //   the new window.
-  // - Overwrite some properties of options with the ones of defaultOptions.
+  // The code below mirrors electrons default behavior except that new windows are only registered as guests when they
+  // were opened from the About dialog. Application windows are thus never closed when another application window is
+  // closed.
   ev.preventDefault()
-  const window = addNewWindow(options, url)
+  const isGuest = disposition !== 'new-window'
+  const window = addNewWindow(url, isGuest, options)
 
-  if (disposition !== 'new-window') {
+  if (isGuest) {
     ev.newGuest = window
   }
 }
@@ -29,48 +27,26 @@ function removeClosedWindow (window) {
   windows.splice(index, 1)
 }
 
-function onNavigated (window, url) {
-  if (url.indexOf(appUrl) === 0) {
-    // We can only get here as a result of clicking Open... or New. Both commands open a new window with a url
-    // containing parameters. After reading said parameters, the url without the parameters is then passed to
-    // window.location.replace. The code below ensures that the window is only shown when the page for the real
-    // application url has finished rendering.
-    if (url.length === appUrl.length) {
-      window.once('ready-to-show', () => window.show())
-    } else {
-      window.webContents.once('did-navigate', (ev, url) => onNavigated(window, url))
-    }
-  } else {
-    window.once('ready-to-show', () => window.show())
-  }
-}
-
-function addNewWindow (options, url) {
+function addNewWindow (url, isGuest, options) {
   const windowState = windowStateKeeper({
     defaultWidth: 1024,
     defaultHeight: 768
   })
 
+  const defaultOptions = { title: 'Net Worth', backgroundColor: isGuest ? undefined : '#25272A' }
   const window = new BrowserWindow({ ...options, ...windowState, ...defaultOptions })
-
-  if (windows.length === 0) {
-    // Apparently, manage also calls window.show(), which is why we bind it to the event.
-    window.once('ready-to-show', () => windowState.manage(window))
-  }
-
   windows.push(window)
   window.setMenu(null)
-  onNavigated(window, url)
-
-  // This event is fired whenever the application calls window.open.
+  // Fired whenever a new window is opened (either by calling window.open or by following a target="_blank" link)
   window.webContents.on('new-window', onWindowOpen)
   window.on('closed', () => removeClosedWindow(window))
   window.loadURL(url)
+  windowState.manage(window)
   return window
 }
 
 function createFirstWindow () {
-  addNewWindow({ webPreferences: { nodeIntegration: false } }, appUrl)
+  addNewWindow('https://andreashuber69.github.io/net-worth/', false, { webPreferences: { nodeIntegration: false } })
 }
 
 app.on('window-all-closed', function () {
