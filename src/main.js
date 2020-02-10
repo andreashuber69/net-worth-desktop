@@ -5,14 +5,14 @@ const windowStateKeeper = require('electron-window-state')
 const windows = []
 
 function onWindowOpen (ev, url, frameName, disposition, options) {
-  // The code below mirrors electrons default behavior, with the following differences:
-  // - New windows are not registered as guests so that closing the original window does not also automatically close
-  //   the new window.
-  // - Overwrite some properties of options with the ones of defaultOptions.
+  // The code below mirrors electrons default behavior except that new windows are only registered as guests when they
+  // were opened from the About dialog. Application windows are thus never closed when another application window is
+  // closed.
   ev.preventDefault()
+  const isGuest = disposition !== 'new-window'
   const window = addNewWindow(url, options)
 
-  if (disposition !== 'new-window') {
+  if (isGuest) {
     ev.newGuest = window
   }
 }
@@ -35,19 +35,13 @@ function addNewWindow (url, options) {
 
   const defaultOptions = { title: 'Net Worth', backgroundColor: '#25272A' }
   const window = new BrowserWindow({ ...options, ...windowState, ...defaultOptions })
-
-  if (windows.length === 0) {
-    // Apparently, manage also calls window.show(), which is why we bind it to the event.
-    window.once('ready-to-show', () => windowState.manage(window))
-  }
-
   windows.push(window)
   window.setMenu(null)
-
-  // This event is fired whenever the application calls window.open.
+  // Fired whenever a new window is opened (either by calling window.open or by following a target="_blank" link)
   window.webContents.on('new-window', onWindowOpen)
   window.on('closed', () => removeClosedWindow(window))
   window.loadURL(url)
+  windowState.manage(window)
   return window
 }
 
