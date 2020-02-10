@@ -3,7 +3,7 @@ const { app, BrowserWindow } = require('electron')
 const windowStateKeeper = require('electron-window-state')
 
 const appUrl = 'https://andreashuber69.github.io/net-worth/'
-const defaultOptions = { show: false, title: 'Net Worth' }
+const defaultOptions = { title: 'Net Worth', backgroundColor: '#25272A' }
 const windows = []
 
 function onWindowOpen (ev, url, frameName, disposition, options) {
@@ -29,22 +29,6 @@ function removeClosedWindow (window) {
   windows.splice(index, 1)
 }
 
-function onNavigated (window, url) {
-  if (url.indexOf(appUrl) === 0) {
-    // We can only get here as a result of clicking Open... or New. Both commands open a new window with a url
-    // containing parameters. After reading said parameters, the url without the parameters is then passed to
-    // window.location.replace. The code below ensures that the window is only shown when the page for the real
-    // application url has finished rendering.
-    if (url.length === appUrl.length) {
-      window.once('ready-to-show', () => window.show())
-    } else {
-      window.webContents.once('did-navigate', (ev, url) => onNavigated(window, url))
-    }
-  } else {
-    window.once('ready-to-show', () => window.show())
-  }
-}
-
 function addNewWindow (options, url) {
   const windowState = windowStateKeeper({
     defaultWidth: 1024,
@@ -60,7 +44,6 @@ function addNewWindow (options, url) {
 
   windows.push(window)
   window.setMenu(null)
-  onNavigated(window, url)
 
   // This event is fired whenever the application calls window.open.
   window.webContents.on('new-window', onWindowOpen)
