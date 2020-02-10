@@ -2,7 +2,6 @@
 const { app, BrowserWindow } = require('electron')
 const windowStateKeeper = require('electron-window-state')
 
-const defaultOptions = { title: 'Net Worth', backgroundColor: '#25272A' }
 const windows = []
 
 function onWindowOpen (ev, url, frameName, disposition, options) {
@@ -34,6 +33,7 @@ function addNewWindow (url, options) {
     defaultHeight: 768
   })
 
+  const defaultOptions = { title: 'Net Worth', backgroundColor: '#25272A' }
   const window = new BrowserWindow({ ...options, ...windowState, ...defaultOptions })
 
   if (windows.length === 0) {
