@@ -50,7 +50,7 @@ function addNewWindow(url: string, isGuest: boolean, options: BrowserWindowConst
     return window;
 }
 
-function createFirstWindow () {
+function createFirstWindow() {
     addNewWindow("https://andreashuber69.github.io/net-worth/", false, { webPreferences: { nodeIntegration: false } });
 }
 
