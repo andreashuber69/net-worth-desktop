@@ -10,7 +10,7 @@ function onWindowOpen (ev, url, frameName, disposition, options) {
   // closed.
   ev.preventDefault()
   const isGuest = disposition !== 'new-window'
-  const window = addNewWindow(url, options)
+  const window = addNewWindow(url, isGuest, options)
 
   if (isGuest) {
     ev.newGuest = window
@@ -27,13 +27,13 @@ function removeClosedWindow (window) {
   windows.splice(index, 1)
 }
 
-function addNewWindow (url, options) {
+function addNewWindow (url, isGuest, options) {
   const windowState = windowStateKeeper({
     defaultWidth: 1024,
     defaultHeight: 768
   })
 
-  const defaultOptions = { title: 'Net Worth', backgroundColor: '#25272A' }
+  const defaultOptions = { title: 'Net Worth', backgroundColor: isGuest ? undefined : '#25272A' }
   const window = new BrowserWindow({ ...options, ...windowState, ...defaultOptions })
   windows.push(window)
   window.setMenu(null)
@@ -46,7 +46,7 @@ function addNewWindow (url, options) {
 }
 
 function createFirstWindow () {
-  addNewWindow('https://andreashuber69.github.io/net-worth/', { webPreferences: { nodeIntegration: false } })
+  addNewWindow('https://andreashuber69.github.io/net-worth/', false, { webPreferences: { nodeIntegration: false } })
 }
 
 app.on('window-all-closed', function () {
