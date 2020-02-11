@@ -3,7 +3,10 @@
     // Compilation options
     "strict": true,
     // Generation options
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "module": "CommonJS",
+    "target": "ES2019",
+    "sourceMap": true
   },
   "include": [
     "src/*.ts"
