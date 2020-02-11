@@ -29,6 +29,7 @@
   "git.confirmSync": false,
   "files.autoSave": "onFocusChange",
   "files.exclude": {
-    "src/*.js": { "when": "$(basename).ts" }
+    "src/*.js": true,
+    "src/*.js.map": true
   },
 }
