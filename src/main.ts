@@ -45,8 +45,10 @@ function addNewWindow(url: string, isGuest: boolean, options: BrowserWindowConst
     // Fired whenever a new window is opened (either by calling window.open or by following a target="_blank" link)
     window.webContents.on("new-window", onWindowOpen);
     window.on("closed", () => removeClosedWindow(window));
-    window.loadURL(url);
     windowState.manage(window);
+    // We don't want to wait for the page to load and there's nothing we can do if there's a failure to load
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    window.loadURL(url).then(() => {}, () => {});
     return window;
 }
 
