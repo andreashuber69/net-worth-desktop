@@ -5,16 +5,21 @@
   },
   "extends": [
     "eslint:recommended",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/all"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": 2018,
-    "sourceType": "module"
+    "sourceType": "module",
+    "project": "./tsconfig.json"
   },
   "plugins": ["@typescript-eslint"],
   "rules": {
-    "@typescript-eslint/no-use-before-define": ["error", { "functions": false, "classes": true }],
-    "@typescript-eslint/explicit-function-return-type": 0
+    "@typescript-eslint/explicit-function-return-type": 0,
+    "@typescript-eslint/no-magic-numbers": 0,
+    "@typescript-eslint/no-use-before-define": 0,
+    "@typescript-eslint/space-before-function-paren": ["error", "never"],
+    "@typescript-eslint/typedef": 0,
+    "space-before-function-paren": ["error", "never"]
   }
 }
