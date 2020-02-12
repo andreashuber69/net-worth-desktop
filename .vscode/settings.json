@@ -28,4 +28,8 @@
   ],
   "git.confirmSync": false,
   "files.autoSave": "onFocusChange",
+  "files.exclude": {
+    "src/*.js": true,
+    "src/*.js.map": true
+  },
 }

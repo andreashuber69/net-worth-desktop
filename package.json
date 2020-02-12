@@ -21,27 +21,24 @@
   "private": true,
   "main": "./src/main.js",
   "scripts": {
-    "start": "electron .",
+    "start": "tsc && electron .",
     "prelint": "cspell '**/*.*' && markdownlint *.md",
-    "lint": "eslint ./src",
+    "lint": "eslint ./src --ext .ts",
     "prebuild": "npm run lint",
-    "build": "electron-builder",
+    "build": "tsc && electron-builder",
     "ci": "npm run build"
   },
-  "dependencies": {
-    "electron-window-state": "^5.0.3"
-  },
+  "dependencies": {},
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.19.1",
+    "@typescript-eslint/parser": "^2.19.1",
     "cspell": "^4.0.46",
     "electron": "^8.0.0",
     "electron-builder": "^22.3.2",
+    "electron-window-state": "^5.0.3",
     "eslint": "^6.8.0",
-    "eslint-config-standard": "^14.1.0",
-    "eslint-plugin-import": "^2.20.1",
-    "eslint-plugin-node": "^11.0.0",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.1",
-    "markdownlint-cli": "^0.22.0"
+    "markdownlint-cli": "^0.22.0",
+    "typescript": "^3.7.5"
   },
   "build": {
     "appId": "net-worth",
