@@ -1,12 +1,16 @@
 {
   "compilerOptions": {
     // Compilation options
+    "forceConsistentCasingInFileNames": true,
+    "lib": ["dom", "es2017"],
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
     "strict": true,
     // Generation options
     "esModuleInterop": true,
-    "module": "CommonJS",
-    "target": "ES2019",
-    "sourceMap": true
+    "module": "commonjs",
+    "sourceMap": true,
+    "target": "es2017"
   },
   "include": [
     "src/*.ts"
