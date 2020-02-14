@@ -1,15 +1,13 @@
 {
   "compilerOptions": {
-    // Compilation options
+    "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "lib": ["dom", "es2017"],
+    "lib": ["es2017", "dom", "dom.iterable"],
+    "module": "commonjs",
     "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
-    "strict": true,
-    // Generation options
-    "esModuleInterop": true,
-    "module": "commonjs",
     "sourceMap": true,
+    "strict": true,
     "target": "es2017"
   },
   "include": [
